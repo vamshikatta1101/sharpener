@@ -1,39 +1,23 @@
+// query selector
+// making second child background color yellow
+var nthItem = document.querySelector('.list-group-item:nth-child(2)');
+nthItem.style.backgroundColor='#90EE90';
 
-// // GETELEMENTBYID
-// // console.log(document.getElementById('header-title'));
-// var headerTitle = document.getElementById('header-title');
-// var header = document.getElementById('main-header');
-// console.log(headerTitle);
-// // headerTitle.textContent = 'vamshi';
-// header.style.borderBottom = '3px solid black'
 
-// var task = document.getElementsByClassName('title')
-// console.log(task);
-// task[0].style.color = 'green';
-// task[0].style.fontWeight = 'bold';
+// making 3rc child inivisble
+var thirdItem = document.querySelector('.list-group-item:nth-child(3)');
+thirdItem.style.display='None'
 
-// // getElementsByClassName
+// getting multiple items
+// changing 2nd item font color to blue
+var items = document.querySelectorAll('.list-group-item');
+console.log(items);
+items[1].style.color='blue';
 
-// var items = document.getElementsByClassName('list-group-item');
-// console.log(items);
-// items[2].style.backgroundColor = 'green';
-// for(var i=0;i<items.length;i++){
-//     items[i].style.fontWeight = 'bold';
-// }
+// changing odd number items background color to green
 
-// getElementsByTagName
-// editing by Tagname
-
-var list1 = document.getElementsByTagName('li')
-console.log(list1);
-
-for(var i=0;i<list1.length;i++){
-    list1[i].style.backgroundColor='#f4f4f4';
-}
-
-// editing by ClassName
-
-var items = document.getElementsByClassName('list-group-item');
-for(var i=0;i<items.length;i++){
-    items[i].style.color='red';
+var odd = document.querySelectorAll('li:nth-child(odd)');
+console.log(odd);
+for(var i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor='green';
 }
