@@ -28,9 +28,16 @@ function onSubmit(e) {
     newBtn.className = 'delete btnStyle';
     newBtn.appendChild(document.createTextNode('Delete'));
 
+    // creating editBtn
+    var editBtn = document.createElement('button');
+    editBtn.className = 'edit btnStyle';
+    editBtn.appendChild(document.createTextNode('Edit'));
+
+
     // Add text node with input values
     li.appendChild(document.createTextNode(`${nameInput.value}: ${emailInput.value}`));
     li.appendChild(newBtn);
+    li.appendChild(editBtn);
 
 
     // Append to ul
@@ -66,11 +73,23 @@ function removeItem(e){
             var a = li.firstChild.textContent
             a = a.split(":")
             check = a[1].trim()
-            localStorage.removeItem(check);
             listItems.removeChild(li);
             
     }
+    // adding Edit event
+    else if(e.target.classList.contains('edit')){
+        var li = e.target.parentElement;
+        var a = li.firstChild.textContent
+        a=a.split(":")
+        nameInput.value = a[0].trim();
+        emailInput.value = a[1].trim();
+        localStorage.removeItem(a[1].trim());
+        listItems.removeChild(li);
+
+    }
 }
+
+
 
 
 
