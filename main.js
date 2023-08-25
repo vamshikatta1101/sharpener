@@ -42,7 +42,7 @@ function onSubmit(e) {
     };
     console.log(myobj);
     var myobj_serialized = JSON.stringify(myobj);
-    localStorage.setItem('myobj',myobj_serialized);
+    localStorage.setItem(myobj.email,myobj_serialized);
 
     // Clear fields
     nameInput.value = '';
